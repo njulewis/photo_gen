@@ -53,3 +53,7 @@ uv run uvicorn main:app --reload --port 8000
 ```
 
 浏览器打开 http://localhost:8000 即可使用。
+
+**5. 效果预览**
+<img width="809" height="1871" alt="PixPin_2026-04-28_15-18-24" src="https://github.com/user-attachments/assets/6459159e-a09b-48be-bfc2-a98810b79c11" />
+
