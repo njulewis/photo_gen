@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>沉浸式纪念照</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>沉浸式纪念照</h1>
+      <p class="subtitle">选择场景 · 上传照片 · 生成专属 AI 纪念图</p>
+    </header>
+
+    <!-- Step 1: Scene selector -->
+    <section class="card" id="section-scenes">
+      <h2><span class="step-badge">1</span> 选择场景</h2>
+      <div class="scene-grid" id="scene-grid">
+        <div class="scene-skeleton"></div>
+        <div class="scene-skeleton"></div>
+        <div class="scene-skeleton"></div>
+      </div>
+    </section>
+
+    <!-- Step 2: Upload -->
+    <section class="card" id="section-upload">
+      <h2><span class="step-badge">2</span> 上传你的照片</h2>
+      <div class="upload-area" id="upload-area">
+        <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" hidden />
+        <div class="upload-placeholder" id="upload-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 16V8m0 0-3 3m3-3 3 3M6.5 19a4.5 4.5 0 01-.916-8.916A5.5 5.5 0 1115.5 6h.5a4 4 0 014 4v.5"/>
+          </svg>
+          <p>点击或拖拽上传照片</p>
+          <span>支持 JPG / PNG / WebP，最大 10MB，请确保照片中人脸清晰</span>
+        </div>
+        <img id="preview-img" class="preview-img hidden" alt="预览" />
+        <button class="btn-text" id="btn-reupload" style="display:none">重新选择</button>
+      </div>
+    </section>
+
+    <!-- Step 3: Generate -->
+    <section class="card" id="section-generate">
+      <button class="btn-primary" id="btn-generate" disabled>开始生成</button>
+      <div class="progress-wrap hidden" id="progress-wrap">
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+        <p class="progress-label" id="progress-label">准备中…</p>
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section class="card hidden" id="section-result">
+      <h2>你的纪念照</h2>
+      <img id="result-img" class="result-img" alt="生成结果" />
+      <div class="result-actions">
+        <a id="btn-download" class="btn-primary" download>下载纪念照</a>
+        <button class="btn-secondary" id="btn-retry">重新生成</button>
+        <button class="btn-secondary" id="btn-change-scene">换一个场景</button>
+      </div>
+    </section>
+
+    <div class="toast hidden" id="toast"></div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

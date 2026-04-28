@@ -1,0 +1,28 @@
+# Environment
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+
+# uv
+.ruff_cache/
+
+# IDE
+.vscode/
+.DS_Store
+
+# Runtime output (generated images)
+outputs/
+
+# Local model files
+models/
+
+# Claude workspace
+.claude/
